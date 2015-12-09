@@ -6,6 +6,7 @@ Meteor.publish('scroll', function(options, searchString) {
    }));
 
    check(searchString,Match.OneOf(String, null, undefined));
+
    if (searchString == null || searchString == undefined)
      searchString = '';
 

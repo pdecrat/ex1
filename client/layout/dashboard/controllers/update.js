@@ -13,7 +13,6 @@
       $scope.images = $meteor.collectionFS(UsersImage, false, UsersImage).subscribe('users-image');
       $scope.error = '';
       $scope.success = '';
-      $scope.returnValue = 'tarace';
       $scope.credentials = { oldPwd: '', newPwd: '', newPwdBis: '' };
       $scope.saveInformation = saveInformation;
       $scope.saveSecurity = saveSecurity;

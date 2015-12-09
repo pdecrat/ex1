@@ -8,8 +8,11 @@
    DashboardCtrl.$inject = ['$scope', '$state', '$modal'];
 
    function DashboardCtrl($scope, $state, $modal) {
+      $scope.tarace = '';
 
-
+      $scope.$watch('tarace', function() {
+         console.log($scope.tarace);
+      })
 
    }
 
