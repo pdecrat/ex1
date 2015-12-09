@@ -33,6 +33,16 @@ function config($urlRouterProvider, $stateProvider, $locationProvider) {
       .html5Mode(true);
 
    $stateProvider
+      .state('ideaList', {
+         url: '/idea/list',
+         templateUrl: 'client/layout/idea/views/list.html',
+         controller: 'IdeaListCtrl'
+      })
+      .state('ideaCreate', {
+         url: '/idea/create',
+         templateUrl: 'client/layout/idea/views/create.html',
+         controller: 'IdeaCreateCtrl'
+      })
       .state('dashboardUpdate', {
          url: '/dashboard/update',
          templateUrl: 'client/layout/dashboard/views/update.html',
