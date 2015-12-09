@@ -32,7 +32,7 @@ Accounts.config({
 - es5-shim                           
    * ECMAScript 5 compatibility for older browsers.
 
-### Officialy maintained packages
+###  Packages maintained by the core Meteor Team
 - [angular][angular]
    * Js client side framework
    * It comes with its own version of ECMAScript so remember to remove the basic one
@@ -50,18 +50,17 @@ Accounts.config({
    * See official angular doc: [here][official-angular-doc]
 - [angularui:angular-ui-bootstrap][angularui:angular-ui-bootstrap]     
    * access $modal and other fancy bootstrap element
+- [twbs:bootstrap][twbs:bootstrap]                     
+   * easy styling
 
 ### Third party packages
 - [danialfarid:ng-file-upload][danialfarid:ng-file-upload]         
    * nicely manages file upload via angular directives
 - [cfs:standard-packages][cfs:standard-packages]              
    * CollectionFS used with $meteorCollectionFS (see angular-meteor api)
-- cfs:gridfs                         
-   * dependency of cfs-standart-packages
+   * has cfs:gridfs as a dependency
 - [alexk111:ng-img-crop][alexk111:ng-img-crop]               
    * a bit of a pain to make it work (really depends on html structure) but nicely crops images
-- [twbs:bootstrap][twbs:bootstrap]                     
-   * easy styling
 - [fortawesome:fontawesome][fortawesome:fontawesome]            
    * cool icons
 - [netanelgilad:ng-infinite-scroll][netanelgilad:ng-infinite-scroll]    
@@ -90,7 +89,6 @@ Hook folder contains Meteor.users modification on creation on check on login if 
 The server folder also contains all the logic behind database manipulation. Allow an deny rules as well as custom methods and publish should be in there.
 
 ## Setting up again
-Angular comes bundled with its version of ecmascript so we need to remove it.
 
 ```
 meteor remove insecure
