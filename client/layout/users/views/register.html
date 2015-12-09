@@ -1,0 +1,48 @@
+  <div class="container" role="form">
+    <div class="row mt">
+      <div class="col-xs-12">
+        <h1 class="medium-title">S'enregister</h1>
+        <p g-show="rc.error">{{ rc.error }}</p>
+      </div>
+    </div>
+    <br/>
+
+    <form name="registerForm" class="row">
+
+      <div class="form-group col-xs-12">
+        <label for="user-name">Nom d'utilisateur :</label>
+        <input class="form-control" type="text" ng-model="rc.credentials.username" placeholder="Username"/>
+      </div>
+
+      <div class="form-group col-xs-12">
+         <label> Email : </label>
+         <input class="form-control" type="text" ng-model="rc.credentials.email" placeholder="Email" aria-label="email"/>
+      </div>
+
+      <div class="form-group col-xs-6">
+          <label for="last-name">Prénom :</label>
+          <input class="form-control" type="text" ng-model="rc.credentials.profile.lastName" placeholder="Last Name" />
+      </div>
+
+      <div class="form-group col-xs-6">
+          <label for="first-name">Nom :</label>
+          <input class="form-control" type="text" ng-model="rc.credentials.profile.firstName" placeholder="First Name" />
+      </div>
+
+      <div class="form-group col-xs-6">
+        <label for="password">Mot de passe:</label>
+        <input class="form-control" type="password" ng-model="rc.credentials.password" placeholder="Password" aria-label="password"/>
+      </div>
+
+      <div ng-show="rc.credentials.password" class="form-group col-xs-6">
+        <label for="password-again">Confirmer le mot de passe:</label>
+        <input class="form-control" type="password" ng-model="rc.check.password" placeholder="Confirm password" aria-label="password"/>
+      </div>
+
+      <div class="row">
+        <div class="text-center">
+           <button ng-show="rc.check.password" class="btn btn-primary col-xs-8 col-xs-offset-2" ng-click="rc.register()" aria-label="login">Valider</button>
+        </div>
+     </div>
+   </form>
+  </div>

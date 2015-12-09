@@ -1,0 +1,43 @@
+   <div id="icon-sidebar" class="msb-toggle-add">
+      <ul>
+         <li class="gt-Menu selected-menu"><a ng-href="index.html#" ng-click= "active='dashboard'"><i class="fa fa-dashboard"></i></a></li><hr>
+         <li class="gt-Menu"><a ng-href="index.html#" ng-click= "active='idea'"><i class="fa fa-lightbulb-o"></i></a></li><hr>
+         <li class="gt-Menu"><a ng-href="index.html#" ng-click= "active='project'"><i class="fa fa-bullseye"></i></a></li><hr>
+         <li class="gt-Menu"><a ng-href="index.html#" ng-click= "active='team'"><i class="fa fa-users"></i></a></li><hr>
+         <li class="gt-Menu"><a ng-href="index.html#" ng-click= "active='feedback'"><i class="fa fa-thumbs-up"></i></a></li>
+     </ul>
+   </div>
+
+   <div id="content-sidebar">
+      <ul ng-show="active=='dashboard'" class="gt-CloseNav gt-SubMenu">
+         <li class="selected-sub-menu"><a ng-href="/dashboard">Dashboard</a></li>
+         <li><a ng-href="index.html#">Quartier général</a></li>
+         <li><a ng-href="index.html#">Objectifs</a></li>
+         <li><a ng-href="index.html#">Talents</a></li>
+         <li><a ng-href="index.html#">Compétences</a></li>
+         <li><a ng-href="index.html#">Intérêts</a></li>
+         <li><a ng-href="index.html#">Parours</a></li>
+         <li><a ng-href="/dashboard/update">Mettre à jour</a></li>
+      </ul>
+      <ul ng-show="active=='idea'" class="gt-CloseNav gt-SubMenu">
+         <li><a ng-href="index.html#">Toutes les idées</a></li>
+         <li><a ng-href="index.html#">Publier une idée</a></li>
+         <li><a ng-href="index.html#">Mes idées</a></li>
+         <li><a ng-href="index.html#">Mes publications</a></li>
+      </ul>
+      <ul ng-show="active=='project'" class="gt-CloseNav gt-SubMenu">
+         <li><a ng-href="index.html#">Tout les projets</a></li>
+         <li><a ng-href="index.html#">Mes projets</a></li>
+      </ul>
+      <ul ng-show="active=='team'" class="gt-CloseNav gt-SubMenu">
+         <li><a ng-href="index.html#">Toutes les équipes</a></li>
+         <li><a ng-href="index.html#">Créer une équipe</a></li>
+         <li><a ng-href="index.html#">Mes équipes</a></li>
+
+      </ul>
+      <ul ng-show="active=='feedback'" class="gt-CloseNav gt-SubMenu">
+         <li><a ng-href="/users">Simple main</a></li>
+         <li><a ng-href="/infinite">Inifinite Scroll</a></li>
+         <li><a ng-href="/draggable">Simple drag</a></li>
+      </ul>
+   </div>

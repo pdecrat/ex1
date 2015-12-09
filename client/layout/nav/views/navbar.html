@@ -1,0 +1,27 @@
+<section>
+   <header class="header">
+      <div id="logo">
+         <img src="collectivz-logo.png">
+      </div>
+      <div ng-show="$root.currentUser" class="hide-small sidebar-toggle-box">
+         <div class="gt-Toggle fa fa-bars"></div>
+      </div>
+      <a ng-href="/" class="logo"><b>COLLECTIVZ</b></a>
+      <ul class="nav pull-right btn-menu">
+         <li>
+            <a ng-href="/login" class="custombtn" ng-hide="$root.currentUser" role="button">
+               Connexion
+            </a>
+         </li>
+         <li>
+            <a ng-href="/register" class="custombtn" ng-hide="$root.currentUser" role="button">S'enregister
+            </a>
+         </li>
+         <li>
+            <a ng-href="/logout" class="custombtn" ng-show="$root.currentUser" role="button">
+               <i class="fa fa-power-off b-icon"></i>
+            </a>
+         </li>
+      </ul>
+   </header>
+</section>

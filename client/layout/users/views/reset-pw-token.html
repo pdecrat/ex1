@@ -1,0 +1,30 @@
+<gt-Notification ng-if="rpt.success" class="success">
+   {{rpt.success}}
+</gt-Notification>
+
+<div class="container" role="form">
+   <div class="row mt">
+      <div class="col-xs-12">
+         <h1 class="medium-title">Choisissez un nouveau mot de passe :</h1>
+         <p ng-show="rpt.error">{{ rpt.error }}</p>
+         <p ng-if="rpt.credentials.newPwdBis!=rpt.credentials.newPwd&&rpt.credentials.newPwdBis">Les mots de passe ne correspondent pas</p>
+      </div>
+   </div>
+   <br/>
+   <form name="updateSecurityForm" class="row">
+      <div class="form-group col-xs-12">
+         <label for="user-name">Nouveau mot de passe :</label>
+         <input class="form-control" type="password" ng-model="rpt.credentials.newPwd"/>
+      </div>
+      <div ng-show="updateSecurityForm.$dirty" class="form-group col-xs-12">
+         <label for="user-name">Confirmer votre nouveau mot de passe :</label>
+         <input class="form-control" type="password" ng-model="rpt.credentials.newPwdBis"/>
+      </div>
+      <div class="row" ng-show="rpt.credentials.newPwdBis==rpt.credentials.newPwd&&rpt.credentials.newPwdBis" ng-disabled="updateSecurityForm.$invalid">
+         <div class="text-center">
+            <button class="btn btn-success col-xs-8 col-xs-offset-2" ng-click="rpt.linkNewPwd()" aria-label="Valider">Valider</button>
+            <a ng-if="rpt.forgot" class="btn btn-warning col-xs-8 col-xs-offset-2" href="/resetpw">Demander un nouveau token</a>
+         </div>
+      </div>
+   </form>
+</div>

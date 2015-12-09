@@ -1,0 +1,28 @@
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="">
+   <meta name="author" content="GT">
+   <meta name="keyword" content="">
+   <base href="/">
+   <title>app</title>
+   <link href='http://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+
+   <!-- Html5Shim to support html5 elmts in IE8 & < -->
+   <!-- Respond.js to support Media queries in IE8 & < -->
+   <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+</head>
+<body>
+
+
+   <div ng-include="'client/layout/nav/views/navbar.html'"></div>
+   <gt-Notifications></gt-Notifications>
+   <div id="main-sidebar" ng-show="$root.currentUser" ng-include="'client/layout/nav/views/sidebar.html'" ng-init="active='dashboard'"></div>
+   <div id="main-content">
+      <div data-ng-class="$root.currentUser ? 'mc-margin-right' : ''" ui-view></div>
+   </div>
+</body>

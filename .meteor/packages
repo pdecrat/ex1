@@ -1,0 +1,35 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-base                        # Packages every Meteor app needs to have
+mobile-experience                  # Packages for a great mobile UX
+mongo                              # The database Meteor supports right now
+session                            # Client-side reactive dictionary for your app
+jquery                             # Helpful client-side library
+tracker                            # Meteor's client-side reactive programming library
+
+standard-minifiers                 # JS/CSS minifiers run for production mode
+es5-shim                           # ECMAScript 5 compatibility for older browsers.
+
+angular                            # client side js framework
+less                               # generate css style sheet dynamically
+check                              # object validation
+email                              # package to send email from meteor server via smtp
+accounts-password                  # manage users authentication
+angularui:angular-ui-router        # angular style user interface router
+angularui:angular-ui-bootstrap     # access $modal and other fancy bootstrap element
+
+
+            # third party packages
+
+danialfarid:ng-file-upload         # nicely manages file upload via angular directives
+cfs:standard-packages              # dependency
+cfs:gridfs                         # dependency (used to split files in tiny chunks before storing them)
+
+twbs:bootstrap                     # easy styling
+fortawesome:fontawesome            # cool icons
+netanelgilad:ng-infinite-scroll    # angular directive to manage subscribe rerun on scroll
+alexk111:ng-img-crop               # a bit of a pain to make it work but nicely crops images

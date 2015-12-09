@@ -1,0 +1,133 @@
+// css reset
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+ margin:0;
+ padding:0;
+ border:0;
+ outline:0;
+ font-size:100%;
+ background:transparent;
+
+}
+
+ul li {
+    list-style: none;
+}
+
+a, a:hover, a:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+html {
+    height:100%;
+}
+
+.header, .footer {
+    min-height: 60px;
+    padding: 0 15px;
+}
+
+// ui angular bootsrap fix
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+//notifications directive css
+gt-Notifications{
+   color: #fff;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1200;
+}
+
+gt-Notification{
+  padding: 15px 30px;
+  margin-bottom: 15px;
+  border-radius: 3px;
+  display: block;
+}
+
+.success {
+   background-color: rgba(92,184,92,1);
+}
+
+.failure {
+   background-color: rgba(217,83,79,1);
+}
+
+@media screen and (max-width: 786px) {
+   gt-Notifications {
+      top: 61px;
+      width: 100%;
+      right: 0;
+   }
+   gt-Notification{
+      margin-bottom: 0;
+   }
+}
+
+
+// css helpers
+.medium-title {
+   font-size: 20px;
+}
+
+.mt {
+   margin-top: 30px;
+}
+
+.smt {
+   margin-top: 15px;
+}
+
+.green {
+   color: rgba(92,184,92,1);
+}
+
+// index.html css
+body {
+   min-height: 100%;
+    color: #797979;
+	 background: #f2f2f2;
+    font-family: 'Ruda', sans-serif;
+    font-size:13px;
+}
+
+#main-content {
+   width: 100%;
+   display: inline-block;
+}
+
+@media (max-width: 786px) {
+   #main-content {
+      margin-top: 60px;
+   }
+}
+
+@media (min-width: 786px) {
+    .mc-margin-right {
+        margin-left: 195px;
+    }
+}
+
+// import all less files
+@import "layout/dashboard/styles/dashboard.import.less";
+@import "layout/dashboard/styles/update.import.less";
+@import "layout/dashboard/styles/update.modal.import.less";
+
+@import "layout/users/styles/user.details.import.less";
+@import "layout/users/styles/users.list.import.less";
+@import "layout/nav/styles/navbar.import.less";
+@import "layout/nav/styles/sidebar.import.less";
+@import "layout/infinite-scroll/styles/infinite.scroll.import.less";

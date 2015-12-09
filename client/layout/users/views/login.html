@@ -1,0 +1,28 @@
+<div class="container" role="form">
+  <div class="row mt">
+    <div class="col-xs-12">
+      <h1 class="medium-title">Connexion</h1>
+      <p ng-show="lc.error">{{ lc.error }}</p>
+    </div>
+  </div>
+  <br/>
+
+  <form name="loginForm" class="row">
+    <div class="form-group col-xs-12">
+      <label for="user-name">Nom d'utilisateur :</label>
+      <input class="form-control" type="text" ng-model="lc.credentials.username" placeholder="Username" />
+    </div>
+
+    <div class="form-group col-xs-12">
+      <label for="password">Mot de passe :</label>
+      <input class="form-control" type="password" ng-model="lc.credentials.password" placeholder="Password" aria-label="password"/>
+    </div>
+
+    <div class="row">
+      <div class="text-center">
+         <button ng-show="lc.credentials.password&&lc.credentials.username" class="btn btn-primary col-xs-8 col-xs-offset-2" ng-click="lc.login()" aria-label="login" ng-disabled="lc.loginForm.$invalid()">Valider</button>
+         <a class="btn btn-danger col-xs-8 col-xs-offset-2" href="/resetpw">Mot de passe oublié ?</a>
+      </div>
+   </div>
+ </form>
+</div>

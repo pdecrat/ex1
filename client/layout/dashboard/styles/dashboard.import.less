@@ -1,0 +1,75 @@
+
+.dashboard-bg {
+   background-color: #202026;
+   overflow: hidden;
+   position: relative;
+   .pic-wrapper {
+      height: 160px;
+      width: 140px;
+      overflow: hidden;
+      padding-top: 20px;
+      margin: auto;
+      .pic {
+         background-clip: content-box;
+         border-radius: 50%;
+         -moz-border-radius: 50%;
+         -webkit-border-radius: 50%;
+         -khtml-border-radius: 50%;
+         margin: auto;
+         width: 140px;
+         height: 140px;
+         // background-image: url('tdurand.jpg');
+         background-repeat: no-repeat;
+         background-size: 100%;
+         background-position: center;
+         background-color: #202026;
+      }
+   }
+   .summary {
+      text-align: center;
+      overflow: hidden;
+      padding: 10px;
+      h2 {
+         font-size: 24px;
+         a{
+            color: #565555;
+         }
+         a:hover {
+            color: #fff;
+         }
+      }
+      .profile-summary {
+         font-size: 14px;
+         padding-bottom: 25px;
+      }
+      .profile-meta {
+         background: rgba(255,255,255,0.8);
+         border-radius: 3px;
+         margin-top: 10px;
+         padding: 7px 0 7px 10px;
+         margin-bottom: 0;
+      }
+      .next-lvl {
+         margin-top: 10px;
+      }
+   }
+}
+
+@media screen and (min-width: 786px) {
+   .dashboard-bg {
+      background-image: url('blue-poly.png');
+      .pic-wrapper {
+         float: left;
+         height: 200px;
+         padding-top: 30px;
+         margin-left: 20px;
+      }
+      .summary {
+         text-align: left;
+         padding: 20px;
+         .profile-meta {
+            font-size: 16px;
+         }
+      }
+   }
+}

@@ -1,0 +1,40 @@
+<gt-Notification ng-if="success" class="success">
+   {{success}}
+</gt-Notification>
+
+<gt-Notification ng-if="error" ttl="10000" class="failure">
+   {{error}}
+</gt-Notification>
+
+<div class="modal-body adjust text-center">
+
+   <div ng-if="step" ngf-drop ngf-select
+       ngf-capture="'camera'"
+       ngf-change="getImage($files)"
+       ngf-drag-over-class="{accept:'dragover', reject:'dragover-err', delay:100}" class="drop-box"
+       ngf-multiple="false" ngf-allow-dir="false" ngf-accept="'image/*'"
+       ngf-drop-available="dropAvailable">
+    <div>Cliquer ici pour selectionner une image</div>
+    <div>
+     <strong>OU</strong>
+    </div>
+    <div ng-show="dropAvailable">Vous pouvez aussi faire glisser l'image ici</div>
+  </div>
+
+   <div ng-hide='step' class='wrap-crop'>
+       <img-crop image="imgSrc" area-min-size="140" result-image-size="200" result-image="myCroppedImage" area-type="square"></img-crop>
+   </div>
+
+   <div ng-hide='step' class="cropped-container">
+         <img class="" ng-src="{{myCroppedImage}}" />
+   </div>
+
+
+   <div class="col-xs-6 smt" >
+     <button ng-hide="step" ng-click="step=!step" class="btn btn-success col-xs-12">Précedent</button>
+   </div>
+   <div class="col-xs-6 smt">
+     <!-- <button ng-if="step==1" ng-click="next()" class="btn btn-success col-xs-12">Suivant</button> -->
+     <button ng-hide="step" ng-click="updateImage()" class="btn btn-success col-xs-12">Mettre à jour !</button>
+   </div>
+</div>

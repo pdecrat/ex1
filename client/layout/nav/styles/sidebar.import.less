@@ -1,0 +1,107 @@
+#main-sidebar {
+   top: 0;
+   position: fixed;
+   min-height: 100%;
+   width: 195px;
+   z-index: 1001;
+}
+
+#icon-sidebar {
+   padding-top: 60px;
+   position: fixed;
+   height: 100%;
+   width: 65px;
+   background: #2c2c34;
+   margin-left: 0px;
+   overflow-y: auto;
+
+   .selected-menu {
+      background: #68dff0;
+   }
+
+   hr {
+      border-color: #67676d;
+      padding: 0;
+      margin: 0;
+   }
+   ul {
+      height: 100%;
+      padding-bottom: 100px;
+      li {
+         position: relative;
+         // line-height: 15px;
+         text-align: center;
+         a {
+            color: #67676d;
+            text-decoration: none;
+            display: block;
+            padding: 20px 10px 20px 10px;
+         }
+         a:hover, a:focus {
+            background: #68dff0;
+            color: #fff;
+            display: block;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+         }
+         i {
+            font-size: 22px;
+         }
+      }
+   }
+}
+
+.msb-toggle {
+   display: none;
+}
+
+#content-sidebar {
+   padding-top: 60px;
+   height: 100%;
+   position: fixed;
+   background: #29292e;
+   margin-left: 65px;
+   width: 130px;
+
+   .selected-sub-menu {
+      background: #ffd777;
+   }
+
+   ul {
+      li {
+         position: relative;
+         a {
+            color: #aeb2b7;
+            text-decoration: none;
+            display: block;
+            padding: 5px 0 5px 10px;
+            font-size: 13px;
+         }
+      }
+   }
+}
+
+@media screen and (max-width: 480px) {
+    #content-sidebar {
+      width: 100%;
+    }
+}
+
+@media screen and (min-width: 786px) {
+    #main-sidebar {
+      display: block;
+    }
+}
+
+.msb-toggle-add, .msb-toggle-remove {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+}
+
+
+// background: #424a5d;

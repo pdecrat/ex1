@@ -1,0 +1,98 @@
+<!-- Add validation notifications to dom -->
+<gt-Notification ng-if="success" class="success">
+   {{success}}
+</gt-Notification>
+
+<gt-Notification ng-if="error" ttl="10000" class="failure">
+   {{error}}
+</gt-Notification>
+
+<!--  main page wrapper-->
+<div class="four-m">
+
+   <!-- Update basic user information container -->
+   <div class="container-item full-height">
+      <h2><i class="fa fa-info-circle"></i>Informations</h2>
+      <p class="green">Les informations de base de votre compte</p>
+      <form name="updateInformationForm" class="row smt">
+         <div class="form-group col-xs-12">
+            <label for="user-name">Nom d'utilisateur :</label>
+            <input class="form-control" type="text" ng-model="user.username"/>
+         </div>
+         <div class="form-group col-xs-12">
+            <label for="user-name">Nom :</label>
+            <input class="form-control" type="text" ng-model="user.profile.lastName"/>
+         </div>
+         <div class="form-group col-xs-12">
+            <label for="user-name">Prénom :</label>
+            <input class="form-control" type="text" ng-model="user.profile.firstName"/>
+         </div>
+         <div class="form-group col-xs-12">
+            <label> Email : </label>
+            <input class="form-control" type="email" ng-model="user.emails[0].address" placeholder="Email" aria-label="email" required/>
+         </div>
+         <div class="form-group col-xs-12">
+            <label for="user-name">Tél fixe :</label>
+            <input  type="tel"
+            pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$"
+            class="form-control"
+            ng-model="user.profile.homePhone"/>
+         </div>
+         <div class="form-group col-xs-12">
+            <label for="user-name">Portable :</label>
+            <input  type="tel"
+            pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$"
+            class="form-control"
+            ng-model="user.profile.mobilePhone"/>
+         </div>
+         <div class="form-group col-xs-12">
+            <label for="user-name">Date de naissance :</label>
+            <input class="form-control" type="date" ng-model="user.profile.birthDate"/>
+         </div>
+         <div ng-show="errorInfo" class="col-xs-12">
+            <p>{{ errorInfo }}</p>
+         </div>
+         <div class="row">
+            <div class="text-center">
+               <button ng-if="updateInformationForm.$dirty" class="btn btn-success col-xs-8 col-xs-offset-2"
+               ng-click="saveInformation()"
+               ng-disabled="updateInformationForm.$invalid"
+               aria-label="Valider">Valider</button>
+            </div>
+         </div>
+      </form>
+   </div>
+
+   <!-- Change profile picture container -->
+   <div class="container-item full-height">
+      <h2><i class="fa fa-camera-retro"></i>Photo</h2>
+      <div class="text-center smt">
+         <img ng-style="getPicture($root.currentUser)" class="picture" ng-click="updatePicModal()"/>
+         <p>Cliquer sur la photo pour la changer</p>
+      </div>
+   </div>
+
+   <!-- Change password container -->
+   <div class="container-item full-height">
+      <h2><i class="fa fa-lock"></i>Sécurité</h2>
+      <form name="updateSecurityForm" class="row">
+         <div class="form-group col-xs-12">
+            <label for="user-name">Ancien password :</label>
+            <input class="form-control" type="password" ng-model="credentials.oldPwd"/>
+         </div>
+         <div class="form-group col-xs-12">
+            <label for="user-name">Nouveau password :</label>
+            <input class="form-control" type="password" ng-model="credentials.newPwd"/>
+         </div>
+         <div class="form-group col-xs-12">
+            <label for="user-name">Nouveau password :</label>
+            <input class="form-control" type="password" ng-model="credentials.newPwdBis"/>
+         </div>
+         <div class="row" ng-if="updateSecurityForm.$dirty && updateSecurityForm.$valid">
+            <div class="text-center">
+               <button class="btn btn-success col-xs-8 col-xs-offset-2" ng-click="saveSecurity()" aria-label="Valider">Valider</button>
+            </div>
+         </div>
+      </form>
+   </div>
+</div>
