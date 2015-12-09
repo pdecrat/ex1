@@ -93,15 +93,22 @@ Declare your databases in there and eventually any schema you wish on applying t
 
 ## client/functions
 ### toggleSidebar.js
- ```<div class="gtToggle">```
+
+ ```
+ <div class="gtToggle">
+ ```
 On click this will target #main-sidebar and applying custom style to make it come and go.
 
 ### activeMenu.js
-```<div class="gt-Menu"></div>```
+```
+<div class="gt-Menu"></div>
+```
 Applies 'selected-menu' class on click and removes it from same level <li>
 
 ### activeSubMenu.js
-```<div class="gt-CloseNav"></div>```
+```
+<div class="gt-CloseNav"></div>
+```
 Applies 'selected-sub-menu' class on click and removes it from same level <li>
 Closes #main-sidebar on click if window.width is too small
 
@@ -109,17 +116,23 @@ Closes #main-sidebar on click if window.width is too small
 implement element drag as shown in angular doc for directive
 
 ### getUserPicture.js
-```<div class="gt-UserPicture"></div>
+```
+<div class="gt-UserPicture"></div>
+```
 Displays user picture.
 
 ### notifications.js
 Courtesy of <https://github.com/jvandemo/angular-growl-notifications>.
 Insert this wherever you want your notifications to show up
- ```<gt-Notifications></gt-Notifications>```
+ ```
+ <gt-Notifications></gt-Notifications>
+ ```
 
 Then if you want to create a notification add
-```<gt-Notification [ttl="timeInMilliSec"] [onOpen='function'] [onClose="function"]></gt-Notification>```
-All attributes are optionals. Defaults time of appearance 5s. 
+```
+<gt-Notification [ttl="timeInMilliSec"] [onOpen='function'] [onClose="function"]></gt-Notification>
+```
+All attributes are optionals. Defaults time of appearance 5s.
 
 
 ## Setting up again
@@ -141,10 +154,9 @@ meteor add alexk111:ng-img-crop
 meteor add twbs:bootstrap
 meteor add less
 meteor add fortawesome:fontawesome
-
-<!-- meteor add sebastianilves:angular-chart-js -->
 ```
 
+<!-- meteor add sebastianilves:angular-chart-js -->
 
 [meteor]: http://docs.meteor.com/#/full/
 [angular]: http://www.angular-meteor.com/api/meteorCollection
