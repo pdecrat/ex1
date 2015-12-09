@@ -73,20 +73,54 @@ Accounts.config({
 Declare your databases in there and eventually any schema you wish on applying to them.
 
 ### Client Side : 'client & public' folders
+-client :
 * The lib folder is loaded first, it contains our angular app definition.
-The functions folder contains angular custom directive, service and providers.
-index.html has the basic html structure of the app.
-main.less does css reset, imports all less files and styles index.html.  
-routes.js takes care of setting up routes for angular-ui-router.
-Any other folder represents a part of our website and has its own controllers, styles and views folder.
+* The functions folder contains angular custom directive, service and providers.
+* index.html has the basic html structure of the app.
+* main.less does css reset, imports all less files and styles index.html.  
+* routes.js takes care of setting up routes for angular-ui-router.
+* Any other folder represents a part of our website and has its own controllers, styles and views folder.
 
-* All assets (images, etc) that need to be available at all time should be placed in the public folder.
+- public: All assets (images, etc) that need to be available at all time should be placed in there.
 
 ### Server Side : 'server' folder
-The config folder contains everything that needs to be done on.. startup. Use it to populate your database
-on first launch
-Hook folder contains Meteor.users modification on creation on check on login if Meteor.settings.public.verify == true and accounts-password is configured to send verification link on creation.
-The server folder also contains all the logic behind database manipulation. Allow an deny rules as well as custom methods and publish should be in there.
+- config:
+* load-db.js populates database on startup
+* settings.js sets Meteor.settings variable and Accounts.config
+* smtp.js setup smtp connection
+- hooks:  contains necessary logic if email verification is on.
+- The server folder also contains all the logic behind database manipulation. Allow and deny rules as well as custom methods and publish should be in there.
+
+## client/functions
+### toggleSidebar.js
+ ```<div class="gtToggle">```
+On click this will target #main-sidebar and applying custom style to make it come and go.
+
+### activeMenu.js
+```<div class="gt-Menu"></div>```
+Applies 'selected-menu' class on click and removes it from same level <li>
+
+### activeSubMenu.js
+```<div class="gt-CloseNav"></div>```
+Applies 'selected-sub-menu' class on click and removes it from same level <li>
+Closes #main-sidebar on click if window.width is too small
+
+### draggable.js
+implement element drag as shown in angular doc for directive
+
+### getUserPicture.js
+```<div class="gt-UserPicture"></div>
+Displays user picture.
+
+### notifications.js
+Courtesy of <https://github.com/jvandemo/angular-growl-notifications>.
+Insert this wherever you want your notifications to show up
+ ```<gt-Notifications></gt-Notifications>```
+
+Then if you want to create a notification add
+```<gt-Notification [ttl="timeInMilliSec"] [onOpen='function'] [onClose="function"]></gt-Notification>```
+All attributes are optionals. Defaults time of appearance 5s. 
+
 
 ## Setting up again
 
