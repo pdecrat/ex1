@@ -73,21 +73,21 @@ Accounts.config({
 Declare your databases in there and eventually any schema you wish on applying to them.
 
 ### Client Side : 'client & public' folders
--client :
-* The lib folder is loaded first, it contains our angular app definition.
-* The functions folder contains angular custom directive, service and providers.
-* index.html has the basic html structure of the app.
-* main.less does css reset, imports all less files and styles index.html.  
-* routes.js takes care of setting up routes for angular-ui-router.
-* Any other folder represents a part of our website and has its own controllers, styles and views folder.
+- client :
+   * The lib folder is loaded first, it contains our angular app definition.
+   * The functions folder contains angular custom directive, service and providers.
+   * index.html has the basic html structure of the app.
+   * main.less does css reset, imports all less files and styles index.html.  
+   * routes.js takes care of setting up routes for angular-ui-router.
+   * Any other folder represents a part of our website and has its own controllers, styles and views folder.
 
 - public: All assets (images, etc) that need to be available at all time should be placed in there.
 
 ### Server Side : 'server' folder
 - config:
-* load-db.js populates database on startup
-* settings.js sets Meteor.settings variable and Accounts.config
-* smtp.js setup smtp connection
+   * load-db.js populates database on startup
+   * settings.js sets Meteor.settings variable and Accounts.config
+   * smtp.js setup smtp connection
 - hooks:  contains necessary logic if email verification is on.
 - The server folder also contains all the logic behind database manipulation. Allow and deny rules as well as custom methods and publish should be in there.
 
