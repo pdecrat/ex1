@@ -1,4 +1,5 @@
 Actions.notifyMembers = function(origin, target, params) {
+
   var members = Meteor.users.find({username: {$in: target.members}}).fetch();
   var notif = {
     content: params.message,
@@ -10,7 +11,7 @@ Actions.notifyMembers = function(origin, target, params) {
   members.forEach(function(member) {
     notif._id = member.notification.length + 1;
     member.notification.push(notif);
-    Collectivz.update(member);
+    Collectivz[member.type].update(member._id, member);
   });
 }
 
@@ -26,6 +27,7 @@ Actions.notifyInCharge = function(origin, target, params) {
   inCharge.forEach(function(responsable) {
     notif._id = responsable.notification.length + 1;
     responsable.notification.push(notif);
-    Collectivz.update(responsable);
+    console.log(responsable);
+    Collectivz[responsable.type].update(responsable._id, responsable);
   });
 }

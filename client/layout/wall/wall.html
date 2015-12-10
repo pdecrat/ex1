@@ -1,0 +1,23 @@
+<br>
+Wall template
+
+<div>
+   <ul>
+      <li ng-repeat="post in wall.posts">
+         {{post.content}}
+      </li>
+   </ul>
+</div>
+
+
+<form name="createPostForm" class="row">
+   <div class="form-group col-xs-12">
+      <label for="content">Votre commentaire :</label>
+      <input class="form-control" type="text" ng-model="newComment" required/>
+   </div>
+   <div class="row" ng-if="createPostForm.$dirty&&createPostForm.$valid">
+      <div class="text-center">
+         <button class="btn btn-success col-xs-8 col-xs-offset-2" ng-click="saveComment()" aria-label="Valider">Commenter</button>
+      </div>
+   </div>
+</form>

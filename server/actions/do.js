@@ -18,11 +18,11 @@ Actions.do = function(origin, actions, targets) {
   //   targets: [Mongo documents]
   var getDocs = function(references) {
     references.forEach(function(ref, i) {
-      references[i] = Collectivz.findOne(ref);
+      references[i] = Collectivz[ref.type].findOne(ref);
     });
     return references;
   };
-  origin = Collectivz.findOne(origin);
+  origin = Collectivz[origin.type].findOne(origin);
 
 
 // Apply an array of action to an array of target
@@ -38,7 +38,7 @@ Actions.do = function(origin, actions, targets) {
   } else if (Array.isArray(actions)) {
     // console.log(Collectivz.findOne(targets));
     if (targets)
-      targets = Collectivz.findOne(targets);
+      targets = Collectivz[targets.type].findOne(targets);
     actions.forEach(function(action) {
       Actions[action.name](origin, targets, action.params);
     });
@@ -53,18 +53,18 @@ Actions.do = function(origin, actions, targets) {
     // Apply an action to a single target
   } else {
     if (targets)
-      targets = Collectivz.findOne(targets);
+      targets = Collectivz[targets.type].findOne(targets);
     Actions[actions.name](origin, targets, actions.params);
   }
 
 
   // Update documents if no error is thrown during action phase
-  Collectivz.update(origin);
+  Collectivz[origin.type].update(origin._id, origin);
   if (Array.isArray(targets)) {
     targets.forEach(function(el) {
-      Collectivz.update(el);
+      Collectivz[el.type].update(el._id, el);
     })
   } else if (targets) {
-    Collectivz.update(targets);
+    Collectivz[targets.type].update(targets._id, targets);
   }
 };

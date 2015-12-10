@@ -6,5 +6,5 @@ Actions.create = function(data) {
   data._id = newId._str;
   data.url = '/' + data.type + 'View/' + data._id;
   data.createdAt = new Date();
-  return Collectivz.insert(data);
+  return Collectivz[data.type].insert(data);
 }

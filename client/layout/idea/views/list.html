@@ -1,8 +1,10 @@
 <div>
-   fazekjfhazelhfaihfz
    <ul>
       <li ng-repeat="idea in ideas">
-       {{ idea.name }}
+         {{idea.name}}
+         <a ng-href="/idea/view/{{idea._id}}">
+            {{ idea.name }}
+         </a>
       </li>
    </ul>
 </div>

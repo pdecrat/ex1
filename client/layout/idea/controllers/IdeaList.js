@@ -9,7 +9,7 @@
    function IdeaListCtrl($scope, $meteor) {
       $scope.ideas = $scope.$meteorCollection(Idea, false).subscribe('idea');
 
-      console.log($scope.ideas);
+      console.log("da fuck");
    }
 
 })();

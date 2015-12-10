@@ -34,7 +34,6 @@
              $scope.error = 'Une erreur est survenue pendant la mise à jour - ' + err;
            }
          );
-
       }
 
    }

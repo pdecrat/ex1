@@ -1,6 +1,6 @@
 Actions.post = function(origin, target, params) {
   var post = {};
-  var wall = Collectivz.findOne({
+  var wall = Wall.findOne({
     type: 'Wall',
     attachedTo: {
     '_id': target._id,
@@ -20,6 +20,6 @@ Actions.post = function(origin, target, params) {
     Actions.create(wall)
   } else {
     wall.posts.push(post);
-    Collectivz.update(wall);
+    Collectivz[wall.type].update(wall._id, wall);
   }
 }

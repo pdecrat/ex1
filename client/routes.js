@@ -43,6 +43,11 @@ function config($urlRouterProvider, $stateProvider, $locationProvider) {
          templateUrl: 'client/layout/idea/views/create.html',
          controller: 'IdeaCreateCtrl'
       })
+      .state('ideaView', {
+         url: '/idea/view/:id',
+         templateUrl: 'client/layout/idea/views/view.html',
+         controller: 'IdeaViewCtrl'
+      })
       .state('dashboardUpdate', {
          url: '/dashboard/update',
          templateUrl: 'client/layout/dashboard/views/update.html',

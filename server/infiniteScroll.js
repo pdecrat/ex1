@@ -5,7 +5,7 @@ Meteor.publish('scroll', function(options, searchString) {
       "sort": { name: Number}
    }));
 
-   check(searchString,Match.OneOf(String, null, undefined));
+   check(searchString, Match.OneOf(String, null, undefined));
 
    if (searchString == null || searchString == undefined)
      searchString = '';

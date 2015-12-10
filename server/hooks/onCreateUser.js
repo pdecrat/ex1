@@ -14,6 +14,15 @@ Accounts.onCreateUser(function(options, user) {
    if (options.profile && options['profile']['firstName'])
       blankProfile['firstName'] = options['profile']['firstName'];
 
+   user.type = "Person";
+   user.roles = [];
    user.profile = blankProfile;
+   user.notification = [];
+   user.character = {
+      experience: 0,
+      level: 0,
+      class: "",
+      credits: 100
+   };
    return user;
 });

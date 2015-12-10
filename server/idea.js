@@ -1,5 +1,13 @@
-Meteor.publish("idea", function () {
-   return Idea.find({});
+Meteor.publish("idea", function (id) {
+   check(id, Match.OneOf(String, undefined));
+
+   if (id) {
+      return Idea.find({_id: id});
+   }
+   else {
+      console.log("here");
+      return Idea.find({});
+   }
 });
 
 Meteor.methods({
