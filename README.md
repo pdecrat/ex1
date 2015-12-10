@@ -135,6 +135,10 @@ Then if you want to create a notification add
 All attributes are optionals. Defaults time of appearance 5s.
 
 
+## https
+
+This year meteor added ssl support built-in, see the doc [here][ssl] for configuration. 
+
 ## Setting up again
 
 ```
@@ -173,3 +177,4 @@ meteor add fortawesome:fontawesome
 [twbs:bootstrap]: https://github.com/twbs/bootstrap
 [fortawesome:fontawesome]: https://fortawesome.github.io/Font-Awesome/icons/
 [netanelgilad:ng-infinite-scroll]: https://github.com/netanelgilad/meteor-ng-infinite-scroll/
+[ssl]: https://github.com/arunoda/meteor-up#ssl-support
