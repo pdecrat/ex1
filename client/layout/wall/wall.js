@@ -5,14 +5,13 @@
       .module('app')
       .directive('gtWall', GetWall)
 
-   GetWall.$inject = ['$filter', '$rootScope', '$stateParams'];
+   GetWall.$inject = ['$stateParams'];
 
-   function GetWall($filter, $rootScope, $stateParams) {
+   function GetWall($stateParams) {
       return {
          restrict: 'E',
          scope: {
             itemType: '@parentType',
-            itemId: '@parentId'
          },
          controller: GetWallCtrl,
          templateUrl: 'client/layout/wall/wall.html',
@@ -32,7 +31,7 @@
       $scope.wall = $meteor.object(Wall, { attachedTo: { _id: $stateParams.id, type: $scope.itemType }}, false);
       $scope.$meteorSubscribe('wall', { _id: $stateParams.id, type: $scope.itemType });
 
-      console.log($scope.itemId);
+      console.log($scope.itemType);
       function saveComment() {
          var target = {_id: $scope.itemId, type: $scope.itemType};
          $meteor.call('post', target, $scope.newComment).then(
@@ -47,7 +46,3 @@
    }
 
 })();
-//
-// var target = {_id: this._id, type: this.type};
-// var content = e.target.content.value;
-// Meteor.call('post', target, content, function(err, res) {

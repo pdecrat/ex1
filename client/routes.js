@@ -38,10 +38,25 @@ function config($urlRouterProvider, $stateProvider, $locationProvider) {
          templateUrl: 'client/layout/idea/views/list.html',
          controller: 'IdeaListCtrl'
       })
+      .state('projectList', {
+         url: '/project/list',
+         templateUrl: 'client/layout/project/views/list.html',
+         controller: 'ProjectListCtrl'
+      })
       .state('ideaCreate', {
          url: '/idea/create',
          templateUrl: 'client/layout/idea/views/create.html',
          controller: 'IdeaCreateCtrl'
+      })
+      .state('projectCreate', {
+         url: '/project/create',
+         templateUrl: 'client/layout/project/views/create.html',
+         controller: 'ProjectCreateCtrl'
+      })
+      .state('projectView', {
+         url: '/project/view/:id',
+         templateUrl: 'client/layout/project/views/view.html',
+         controller: 'ProjectViewCtrl'
       })
       .state('ideaView', {
          url: '/idea/view/:id',

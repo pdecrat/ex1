@@ -5,7 +5,6 @@ Meteor.publish("idea", function (id) {
       return Idea.find({_id: id});
    }
    else {
-      console.log("here");
       return Idea.find({});
    }
 });

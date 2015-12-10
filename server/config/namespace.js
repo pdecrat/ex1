@@ -1,7 +1,7 @@
 Collectivz = {
   Person: Meteor.users,
   Idea: Idea,
-  // Project: Project,
+  Project: Project,
   // Challenge: Challenge,
   // Election: Election,
   // Mission: Mission,
