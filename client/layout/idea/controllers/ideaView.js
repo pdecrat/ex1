@@ -7,8 +7,9 @@
    IdeaViewCtrl.$inject = ['$scope', '$meteor', '$stateParams'];
 
    function IdeaViewCtrl($scope, $meteor, $stateParams) {
-      $scope.idea = $meteor.object(Idea, $stateParams.id, false);
-      $scope.$meteorSubscribe('idea', $stateParams.id);
+      $scope.$meteorSubscribe('idea', $stateParams.id).then(function(){
+         $scope.idea = $scope.$meteorObject(Idea, $stateParams.id, false);
+      })
 
    }
 

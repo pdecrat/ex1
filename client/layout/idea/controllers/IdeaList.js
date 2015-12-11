@@ -7,7 +7,18 @@
    IdeaListCtrl.$inject = ['$scope', '$meteor'];
 
    function IdeaListCtrl($scope, $meteor) {
-      $scope.ideas = $scope.$meteorCollection(Idea, false).subscribe('idea');
+      $scope.$meteorSubscribe('idea').then(function() {
+         $scope.ideas = $scope.$meteorCollection(function() {
+            return Idea.find({});
+         });
+      });
    }
 
 })();
+
+//
+// $scope.$meteorSubscribe('getPopularPosts',  _.defaults(DEFAULT_QUERY_OPTIONS, limit: 5).then(-> {
+//       $scope.posts = $scope.$meteorCollection(->
+//           Posts.find();
+//       )
+// })

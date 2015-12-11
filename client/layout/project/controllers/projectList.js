@@ -8,7 +8,11 @@
    ProjectListCtrl.$inject = ['$scope', '$meteor'];
 
    function ProjectListCtrl($scope, $meteor) {
-      $scope.projects = $scope.$meteorCollection(Project, false).subscribe('project');
+      $scope.$meteorSubscribe('project').then(function() {
+         $scope.projects = $scope.$meteorCollection(function() {
+            return Project.find({});
+         });
+      });
    }
 
 

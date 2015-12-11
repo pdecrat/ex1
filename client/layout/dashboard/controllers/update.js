@@ -8,9 +8,12 @@
    UpdateCtrl.$inject = ['$scope', '$rootScope', '$meteor', '$state', '$modal', '$filter'];
 
    function UpdateCtrl($scope, $rootScope, $meteor, $state, $modal, $filter) {
-      $scope.user = $meteor.object(Meteor.users, $rootScope.currentUser._id, false);
-      $scope.$meteorSubscribe('users');
-      $scope.images = $meteor.collectionFS(UsersImage, false, UsersImage).subscribe('users-image');
+      $scope.$meteorSubscribe('users').then(function() {
+         $scope.user = $scope.$meteorObject(Meteor.users, $rootScope.currentUser._id, false);
+      });
+      $scope.$meteorSubscribe('users-image').then(function() {
+         $scope.images = $meteor.collectionFS(UsersImage, false, UsersImage);
+      });
       $scope.error = '';
       $scope.success = '';
       $scope.credentials = { oldPwd: '', newPwd: '', newPwdBis: '' };
