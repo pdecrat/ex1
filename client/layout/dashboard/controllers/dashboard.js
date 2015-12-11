@@ -11,7 +11,6 @@
       $scope.tarace = '';
 
       $scope.$watch('tarace', function() {
-         console.log($scope.tarace);
       })
 
    }

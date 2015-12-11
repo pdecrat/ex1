@@ -3,6 +3,7 @@ function($scope, $meteor) {
 
    $scope.sort = {name: 1};
    $scope.orderProperty = '1';
+   $scope.search = '';
 
    var page = 15;
 
@@ -13,8 +14,10 @@ function($scope, $meteor) {
    }, $scope.getReactively('search'));
 
    $scope.images = $meteor.collection(function() {
-      return Scroll.find({}, {
-         sort : $scope.getReactively('sort')
+      return Scroll.find({
+         'name': { '$regex' : '.*' + $scope.getReactively('search') || '' + '.*', '$options' : 'i' }
+      }, {
+         sort : $scope.getReactively('sort'),
       });
    });
 
@@ -26,6 +29,8 @@ function($scope, $meteor) {
          sort: $scope.getReactively('sort')
       }, $scope.getReactively('search'));
    };
+
+
 
    $scope.$watch('orderProperty', function(){
      if ($scope.orderProperty)

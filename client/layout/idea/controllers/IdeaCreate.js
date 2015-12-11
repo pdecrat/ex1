@@ -23,7 +23,6 @@
          $scope.newIdea.objBackers = parseInt($scope.audienceSize);
       })
 
-
       function saveIdea() {
          console.log($scope.newIdea);
          $meteor.call('insertIdea', $scope.newIdea).then(
