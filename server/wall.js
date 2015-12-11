@@ -1,5 +1,6 @@
 Meteor.publish("wall", function (params) {
 
+   console.log(params);
    check(params, Match.Optional({
       _id: String,
       type: String
