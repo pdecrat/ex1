@@ -33,5 +33,17 @@ Meteor.methods({
       ]
       Actions.create(data);
     }
+  },
+  becomeMember: function(target) {
+    var user = Meteor.user();
+    var actions = [
+      {name: 'giveCredits', params: {cost: 1}},
+      {name: 'getXp', params: {xp: 10}},
+      {name: 'becomeMember', params: {}},
+      {name: 'notifyMembers', params: {
+        message: user.username + " est devenu membre."}},
+    ];
+
+    Actions.do(user, actions, target);
   }
 });

@@ -1,10 +1,10 @@
 <div>
    <ul>
       <li ng-repeat="idea in ideas">
-         {{idea.name}}
          <a ng-href="/idea/view/{{idea._id}}">
             {{ idea.name }}
          </a>
+         <button ng-click="becomeMember()" ><span title="Supportez l'idée" class="support right"></span></button>
       </li>
    </ul>
 </div>
